@@ -1,128 +1,332 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Systems Biology Lab | HUFS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Systems Biology Lab at Hankuk University of Foreign Studies">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8">
+<title>Systems Biology Lab | HUFS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Systems Biology Lab at Hankuk University of Foreign Studies">
+<style>
+
+:root{
+  --navy:#0b1f3a;
+  --blue:#1769e0;
+  --cyan:#00a6b4;
+  --bg:#f5f8fc;
+  --white:#fff;
+  --text:#1b2533;
+  --muted:#667085;
+  --line:#d9e2ef;
+  --card:#ffffff;
+  --shadow:0 18px 48px rgba(11,31,58,.12);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,"Helvetica Neue","Noto Sans KR",sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.65;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:0 auto}
+.topbar{
+  background:var(--navy);
+  color:#d8e6ff;
+  font-size:.9rem;
+  padding:8px 0;
+}
+.topbar-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 18px rgba(16,24,40,.04);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:76px;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  font-weight:900;
+  color:var(--navy);
+  letter-spacing:-.03em;
+}
+.logo-mark{
+  width:46px;height:46px;
+  border-radius:14px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  color:white;
+  box-shadow:0 12px 24px rgba(23,105,224,.25);
+}
+.logo small{
+  display:block;
+  color:var(--muted);
+  font-size:.76rem;
+  letter-spacing:0;
+  margin-top:-3px;
+  font-weight:700;
+}
+.menu{display:flex;gap:2px;align-items:center}
+.menu a{
+  padding:11px 13px;
+  border-radius:999px;
+  color:#344054;
+  font-weight:700;
+  font-size:.95rem;
+}
+.menu a:hover,.menu a.active{background:#eaf2ff;color:var(--blue)}
+.hero{
+  background:
+    radial-gradient(circle at 10% 15%,rgba(23,105,224,.18),transparent 28%),
+    radial-gradient(circle at 88% 20%,rgba(0,166,180,.18),transparent 30%),
+    linear-gradient(180deg,#fff 0%,#eef5ff 100%);
+  padding:80px 0 70px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:center;
+}
+.kicker{
+  display:inline-flex;
+  background:#eaf2ff;
+  border:1px solid #c9ddff;
+  color:var(--blue);
+  border-radius:999px;
+  padding:7px 13px;
+  font-weight:900;
+  font-size:.86rem;
+}
+h1{
+  font-size:clamp(2.6rem,5.5vw,4.8rem);
+  line-height:.98;
+  letter-spacing:-.06em;
+  margin:18px 0;
+  color:var(--navy);
+}
+.hero p{
+  font-size:1.12rem;
+  color:#475467;
+  max-width:760px;
+  margin:0 0 26px;
+}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;
+  padding:13px 18px;
+  border-radius:999px;
+  font-weight:900;
+  border:1px solid transparent;
+}
+.btn.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;box-shadow:0 14px 28px rgba(23,105,224,.24)}
+.btn.secondary{background:white;border-color:var(--line);color:var(--navy)}
+.visual{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  padding:22px;
+}
+.visual img{display:block;width:100%;border-radius:24px}
+.section{padding:70px 0}
+.section-title{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:26px;
+  margin-bottom:28px;
+}
+.section-title h2,.page-title h1{
+  margin:0;
+  color:var(--navy);
+  letter-spacing:-.04em;
+}
+.section-title h2{font-size:clamp(2rem,3.5vw,2.8rem);line-height:1.05}
+.section-title p{max-width:620px;color:var(--muted);margin:0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:0 12px 32px rgba(16,24,40,.06);
+}
+.icon{
+  width:48px;height:48px;
+  border-radius:16px;
+  background:#eaf2ff;
+  display:grid;place-items:center;
+  color:var(--blue);
+  font-weight:900;
+  margin-bottom:14px;
+}
+.card h3{margin:0 0 10px;color:var(--navy);font-size:1.26rem}
+.card p{margin:0;color:#566273}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{
+  background:#eef8ff;
+  border:1px solid #cdeaff;
+  color:#1165a8;
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:.83rem;
+  font-weight:800;
+}
+.news{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.news-row{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:18px;
+  padding:18px 22px;
+  border-bottom:1px solid var(--line);
+}
+.news-row:last-child{border-bottom:0}
+.news-date{font-weight:900;color:var(--blue)}
+.page-hero{
+  padding:64px 0 46px;
+  background:linear-gradient(180deg,#fff,#eef5ff);
+  border-bottom:1px solid var(--line);
+}
+.page-title h1{font-size:clamp(2.4rem,5vw,4.2rem)}
+.page-title p{max-width:800px;color:var(--muted);font-size:1.08rem}
+.profile{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:28px;
+  align-items:start;
+}
+.portrait{
+  min-height:260px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#dbeafe,#ccfbf1);
+  display:grid;
+  place-items:center;
+  font-size:4rem;
+  font-weight:900;
+  color:var(--blue);
+  border:1px solid var(--line);
+}
+ul{padding-left:20px}
+.person{padding:18px;border:1px solid var(--line);border-radius:18px;background:white}
+.person h3{margin:0}
+.role{font-weight:900;color:var(--blue);margin:3px 0 8px}
+.pub-list{display:grid;gap:14px}
+.pub{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px 20px;
+}
+.pub-title{font-weight:900;color:var(--navy)}
+.pub-meta{color:var(--muted);margin-top:4px}
+.footer{
+  background:var(--navy);
+  color:#d8e6ff;
+  padding:38px 0;
+  margin-top:50px;
+}
+.footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+@media(max-width:900px){
+  .hero-grid,.grid-3,.grid-2,.profile{grid-template-columns:1fr}
+  .nav{align-items:flex-start;flex-direction:column;padding:14px 0}
+  .menu{flex-wrap:wrap}
+  .menu a{background:#f2f6fb}
+  .section-title{align-items:flex-start;flex-direction:column}
+  .news-row{grid-template-columns:1fr;gap:4px}
+}
+
+</style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="index.html" aria-label="Systems Biology Lab Home">
-      <span class="brand-mark">SB</span>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div>Hankuk University of Foreign Studies · Division of Biomedical Engineering</div>
+    <div>Computational Biology · Biomedical Data Science</div>
+  </div>
+</div>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">SB</span>
       <span>Systems Biology Lab<small>HUFS Biomedical Engineering</small></span>
     </a>
-    <button class="menu-button" type="button">Menu</button>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a class="active" href="index.html">Home</a>
-      <a class="" href="people.html">People</a>
-      <a class="" href="research.html">Research</a>
-      <a class="" href="publications.html">Publications</a>
-      <a class="" href="teaching.html">Teaching</a>
-      <a class="" href="join.html">Join</a>
-      <a class="" href="contact.html">Contact</a>
-    </nav>
+    <nav class="menu"><a class="active" href="index.html">Home</a>
+<a class="" href="people.html">People</a>
+<a class="" href="research.html">Research</a>
+<a class="" href="publications.html">Publications</a>
+<a class="" href="teaching.html">Teaching</a>
+<a class="" href="join.html">Join</a>
+<a class="" href="contact.html">Contact</a></nav>
   </div>
 </header>
 
-
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Computational Biology · Biomedical Data Science</span>
-        <h1>Systems biology for precision biomedical discovery.</h1>
-        <p>
-          We develop computational approaches for drug repositioning, single-cell genomics,
-          metagenomics, disease networks, and translational biomedical data analysis.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="research.html">Explore Research</a>
-          <a class="btn secondary" href="join.html">Join the Lab</a>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <h3>Research Focus</h3>
-        <p>
-          Network medicine, AI-driven drug discovery, omics integration, and data-driven
-          interpretation of complex biological systems.
-        </p>
-        <div class="stat-grid">
-          <div class="stat"><b>AI</b><span>Drug repositioning</span></div>
-          <div class="stat"><b>scRNA</b><span>Single-cell analysis</span></div>
-          <div class="stat"><b>Meta</b><span>Microbiome data</span></div>
-          <div class="stat"><b>Net</b><span>Disease networks</span></div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>What we study</h2>
-        <p>Our work connects computational methodology with clinically meaningful biomedical questions.</p>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Drug Repositioning</h3>
-          <p>Prediction of new therapeutic opportunities using heterogeneous biomedical networks, omics data, and machine learning.</p>
-          <div class="tag-list"><span class="tag">Deep Learning</span><span class="tag">Network Medicine</span></div>
-        </article>
-        <article class="card">
-          <h3>Single-cell Genomics</h3>
-          <p>Analysis of cell types, clusters, gene-expression programs, and regulatory networks from single-cell RNA-seq data.</p>
-          <div class="tag-list"><span class="tag">scRNA-seq</span><span class="tag">Cell Types</span></div>
-        </article>
-        <article class="card">
-          <h3>Metagenomics</h3>
-          <p>Computational methods for taxonomic classification and microbiome-based disease prediction.</p>
-          <div class="tag-list"><span class="tag">Microbiome</span><span class="tag">Prediction</span></div>
-        </article>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">AI · Systems Biology · Biomedical Data Science</span>
+      <h1>Systems biology for precision biomedical discovery.</h1>
+      <p>We develop computational approaches for drug repositioning, single-cell genomics, metagenomics, disease networks, and translational biomedical data analysis.</p>
+      <div class="buttons">
+        <a class="btn primary" href="research.html">Explore Research</a>
+        <a class="btn secondary" href="join.html">Join the Lab</a>
       </div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Recent news</h2>
-        <p>Edit this section in <code>index.html</code> whenever you want to add lab updates.</p>
-      </div>
-      <div class="news-list">
-        <div class="news-item">
-          <div class="news-date">2026</div>
-          <div><strong>New lab website launched.</strong><br><span class="muted">The Systems Biology Lab website has been redesigned using GitHub Pages.</span></div>
-        </div>
-        <div class="news-item">
-          <div class="news-date">2024</div>
-          <div><strong>MIMR paper published.</strong><br><span class="muted">Web-based system for integrated miRNA and mRNA analysis.</span></div>
-        </div>
-      </div>
+    <div class="visual">
+      <img src="assets/img/hero-bioinformatics.svg" alt="Bioinformatics network and DNA illustration">
     </div>
-  </section>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Research areas</h2>
+      <p>Our lab connects computational methodology with clinically meaningful biomedical questions.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card"><div class="icon">AI</div><h3>Drug Repositioning</h3><p>Prediction of new therapeutic opportunities using heterogeneous biomedical networks, omics data, and machine learning.</p><div class="tags"><span class="tag">Deep Learning</span><span class="tag">Network Medicine</span></div></article>
+      <article class="card"><div class="icon">SC</div><h3>Single-cell Genomics</h3><p>Analysis of cell types, clusters, gene-expression programs, and regulatory networks from single-cell RNA-seq data.</p><div class="tags"><span class="tag">scRNA-seq</span><span class="tag">Cell Type</span></div></article>
+      <article class="card"><div class="icon">MB</div><h3>Metagenomics</h3><p>Computational methods for taxonomic classification and microbiome-based disease prediction.</p><div class="tags"><span class="tag">Microbiome</span><span class="tag">Prediction</span></div></article>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-title">
+      <h2>Recent news</h2>
+      <p>Update this area in <code>index.html</code> when new papers, grants, students, or lab events are added.</p>
+    </div>
+    <div class="news">
+      <div class="news-row"><div class="news-date">2026</div><div><strong>New lab website launched.</strong><br><span style="color:#667085">The Systems Biology Lab website has been redesigned using GitHub Pages.</span></div></div>
+      <div class="news-row"><div class="news-date">2024</div><div><strong>MIMR paper published.</strong><br><span style="color:#667085">A web-based system for integrated miRNA and mRNA analysis.</span></div></div>
+    </div>
+  </div>
+</section>
 </main>
-
 
 <footer class="footer">
   <div class="container footer-grid">
-    <div>
-      <strong>Systems Biology Lab</strong><br>
-      Hankuk University of Foreign Studies
-    </div>
-    <div>
-      Division of Biomedical Engineering<br>
-      Yongin, Republic of Korea
-    </div>
+    <div><strong>Systems Biology Lab</strong><br>Hankuk University of Foreign Studies</div>
+    <div>Division of Biomedical Engineering<br>Yongin, Republic of Korea</div>
+    <div>E-mail: <a href="mailto:yk38@hufs.ac.kr">yk38@hufs.ac.kr</a></div>
   </div>
 </footer>
-<script src="assets/js/site.js"></script>
-
 </body>
 </html>

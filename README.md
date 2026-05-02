@@ -1,59 +1,21 @@
-# Systems Biology Lab Website
+# Systems Biology Lab Website v2
 
-This is a static GitHub Pages website for the Systems Biology Lab at HUFS.
+Upload the files inside this folder to the root of the GitHub repository:
 
-## Recommended GitHub repository
+`ykosysbiolab.github.io`
 
-Create this repository under the `ykosysbiolab` GitHub organization:
+Do not upload the containing folder itself.
 
-```text
-ykosysbiolab.github.io
-```
+The repository root should contain:
 
-Then upload all files in this folder to the repository root.
+- index.html
+- people.html
+- research.html
+- publications.html
+- teaching.html
+- join.html
+- contact.html
+- CNAME
+- assets/
 
-## GitHub Pages settings
-
-Go to:
-
-```text
-Settings → Pages
-```
-
-Use:
-
-```text
-Source: Deploy from a branch
-Branch: main
-Folder: /root
-```
-
-The site will first appear at:
-
-```text
-https://ykosysbiolab.github.io
-```
-
-## Custom domain
-
-This package already contains a `CNAME` file:
-
-```text
-sysbio.hufs.ac.kr
-```
-
-Ask the HUFS domain/DNS administrator to set:
-
-```text
-Type: CNAME
-Host/Name: sysbio
-Target/Value: ykosysbiolab.github.io
-```
-
-After DNS is updated, set the custom domain in GitHub Pages settings:
-
-```text
-sysbio.hufs.ac.kr
-```
-
-Then enable HTTPS.
+This version has CSS embedded directly in each HTML file, so it should not appear as plain unstyled text even if a CSS file path is broken.
