@@ -47,6 +47,11 @@ a{color:inherit;text-decoration:none}
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
 .card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 28px rgba(16,24,40,.05)}
 .card h3{margin:0 0 10px;color:var(--navy);font-size:1.28rem}.card p{margin:0;color:#536174}
+.research-card{display:flex;flex-direction:column;gap:16px}
+.research-figure{width:100%;height:185px;border-radius:18px;background:linear-gradient(135deg,#eef5ff,#e6fffb);border:1px solid var(--line);display:block}
+.research-card .card-text{display:flex;flex-direction:column;gap:8px}
+.research-card p{margin:0;color:#536174}
+
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .icon{width:48px;height:48px;border-radius:15px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-weight:900;margin-bottom:14px}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.tag{background:#eef8ff;border:1px solid #cdeaff;color:#1165a8;border-radius:999px;padding:5px 10px;font-size:.83rem;font-weight:800}
@@ -72,11 +77,57 @@ a{color:inherit;text-decoration:none}
 <header class="header"><div class="container nav"><a class="logo" href="index.html"><span class="logo-mark">SB</span><span>Systems Biology Lab<small>HUFS Biomedical Engineering</small></span></a><nav class="menu"><a class="" href="index.html">Home</a><a class="active" href="research.html">Research</a><a class="" href="publications.html">Publications</a><a class="" href="members.html">Members</a><a class="" href="teaching.html">Teaching</a><a class="" href="join.html">Join</a><a class="" href="contact.html">Contact</a></nav></div></header>
 
 <main><section class="page-hero"><div class="container"><span class="kicker">Research</span><h1>Research Topics</h1><p>Computational systems biology methods for drug repositioning, single-cell genomics, metagenomics, and LLM-based personalized disease-risk prediction.</p></div></section>
-<section class="section"><div class="container grid-3">
-<article class="card"><div class="icon">LLM</div><h3>Personalized disease-risk prediction</h3><p>LLM-based interpretation of genomic variants, biomedical knowledge, and clinical context to estimate individualized disease risk.</p><div class="tags"><span class="tag">Variants</span><span class="tag">Risk Score</span><span class="tag">Precision Medicine</span></div></article>
-<article class="card"><div class="icon">AI</div><h3>Systematic drug repositioning</h3><p>Drug repositioning based on deep learning models and network embedding for integration of heterogeneous genomic data.</p><div class="tags"><span class="tag">Deep Learning</span><span class="tag">Network Embedding</span></div></article>
-<article class="card"><div class="icon">SC</div><h3>Single-cell genomics</h3><p>Gene expression analysis of scRNA data, cluster analysis, cell type identification, and regulatory network analysis.</p><div class="tags"><span class="tag">scRNA-seq</span><span class="tag">Regulatory Networks</span></div></article>
-<article class="card"><div class="icon">MB</div><h3>Metagenomics</h3><p>Computational methods for taxonomic classification and disease prediction based on microbiome profiles.</p><div class="tags"><span class="tag">Microbiome</span><span class="tag">Disease Prediction</span></div></article>
+<section class="section"><div class="container grid-2">
+<article class="card research-card"><svg class="research-figure" viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LLM-based personalized disease risk prediction illustration">
+<defs><linearGradient id="llmg" x1="0" x2="1"><stop stop-color="#1f6feb"/><stop offset="1" stop-color="#00a6b4"/></linearGradient></defs>
+<rect width="720" height="430" rx="28" fill="#f7fbff"/>
+<rect x="42" y="72" width="160" height="220" rx="22" fill="#fff" stroke="#d8e2ef"/>
+<text x="70" y="118" font-family="Arial" font-size="22" font-weight="800" fill="#071a33">Variants</text>
+<path d="M92 155 C150 170 120 235 178 255" stroke="#1f6feb" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M178 155 C120 170 150 235 92 255" stroke="#00a6b4" stroke-width="8" fill="none" stroke-linecap="round"/>
+<rect x="270" y="68" width="180" height="230" rx="26" fill="#eef5ff" stroke="#bcd6ff"/>
+<circle cx="360" cy="170" r="58" fill="url(#llmg)"/>
+<text x="311" y="183" font-family="Arial" font-size="38" font-weight="900" fill="#fff">LLM</text>
+<text x="306" y="255" font-family="Arial" font-size="18" fill="#344054">evidence integration</text>
+<rect x="520" y="72" width="158" height="220" rx="22" fill="#fff" stroke="#d8e2ef"/>
+<text x="552" y="118" font-family="Arial" font-size="22" font-weight="800" fill="#071a33">Risk</text>
+<circle cx="599" cy="190" r="54" fill="none" stroke="#e5edf8" stroke-width="18"/>
+<path d="M599 136 A54 54 0 1 1 555 222" stroke="url(#llmg)" stroke-width="18" fill="none" stroke-linecap="round"/>
+<text x="568" y="202" font-family="Arial" font-size="30" font-weight="900" fill="#1f6feb">73%</text>
+<path d="M210 184 C240 184 245 184 262 184" stroke="#8fbdf9" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M456 184 C486 184 492 184 512 184" stroke="#8fbdf9" stroke-width="7" fill="none" stroke-linecap="round"/>
+</svg><div class="card-text"><h3>Personalized disease-risk prediction</h3><p>LLM-based interpretation of genomic variants, biomedical knowledge, and clinical context to estimate individualized disease risk and prioritize clinically meaningful variants.</p><div class="tags"><span class="tag">Variants</span><span class="tag">Risk Score</span><span class="tag">Precision Medicine</span></div></div></article>
+<article class="card research-card"><svg class="research-figure" viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drug repositioning network illustration">
+<defs><linearGradient id="dg" x1="0" x2="1"><stop stop-color="#1f6feb"/><stop offset="1" stop-color="#00a6b4"/></linearGradient></defs>
+<rect width="720" height="430" rx="28" fill="#f7fbff"/>
+<g stroke="#b7d0f7" stroke-width="4"><line x1="160" y1="120" x2="360" y2="210"/><line x1="160" y1="300" x2="360" y2="210"/><line x1="360" y1="210" x2="570" y2="115"/><line x1="360" y1="210" x2="570" y2="305"/><line x1="160" y1="120" x2="570" y2="305"/></g>
+<circle cx="160" cy="120" r="48" fill="#fff" stroke="#1f6feb" stroke-width="7"/><text x="132" y="128" font-family="Arial" font-size="18" font-weight="800" fill="#071a33">Drug</text>
+<circle cx="160" cy="300" r="48" fill="#fff" stroke="#00a6b4" stroke-width="7"/><text x="124" y="308" font-family="Arial" font-size="18" font-weight="800" fill="#071a33">Gene</text>
+<circle cx="360" cy="210" r="64" fill="url(#dg)"/><text x="312" y="218" font-family="Arial" font-size="24" font-weight="900" fill="#fff">Model</text>
+<circle cx="570" cy="115" r="50" fill="#fff" stroke="#1f6feb" stroke-width="7"/><text x="532" y="123" font-family="Arial" font-size="18" font-weight="800" fill="#071a33">Disease</text>
+<circle cx="570" cy="305" r="50" fill="#fff" stroke="#00a6b4" stroke-width="7"/><text x="535" y="313" font-family="Arial" font-size="18" font-weight="800" fill="#071a33">Target</text>
+<text x="80" y="390" font-family="Arial" font-size="22" font-weight="800" fill="#071a33">Network embedding for drug–disease prediction</text>
+</svg><div class="card-text"><h3>Systematic drug repositioning</h3><p>Drug repositioning based on deep learning models and network embedding for integration of heterogeneous genomic, disease, and drug-response data.</p><div class="tags"><span class="tag">Deep Learning</span><span class="tag">Network Embedding</span></div></div></article>
+<article class="card research-card"><svg class="research-figure" viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Single-cell genomics clustering illustration">
+<rect width="720" height="430" rx="28" fill="#f7fbff"/>
+<circle cx="170" cy="150" r="18" fill="#1f6feb"/><circle cx="220" cy="120" r="15" fill="#1f6feb"/><circle cx="230" cy="180" r="20" fill="#1f6feb"/><circle cx="145" cy="210" r="17" fill="#1f6feb"/><circle cx="265" cy="220" r="15" fill="#1f6feb"/>
+<circle cx="470" cy="120" r="19" fill="#00a6b4"/><circle cx="530" cy="145" r="16" fill="#00a6b4"/><circle cx="505" cy="205" r="18" fill="#00a6b4"/><circle cx="430" cy="205" r="15" fill="#00a6b4"/><circle cx="560" cy="230" r="17" fill="#00a6b4"/>
+<circle cx="340" cy="285" r="18" fill="#ff9f1c"/><circle cx="390" cy="310" r="16" fill="#ff9f1c"/><circle cx="305" cy="340" r="15" fill="#ff9f1c"/><circle cx="430" cy="360" r="18" fill="#ff9f1c"/>
+<g stroke="#c7d7ee" stroke-width="3" opacity=".8"><line x1="170" y1="150" x2="220" y2="120"/><line x1="220" y1="120" x2="230" y2="180"/><line x1="470" y1="120" x2="530" y2="145"/><line x1="505" y1="205" x2="560" y2="230"/><line x1="340" y1="285" x2="390" y2="310"/><line x1="390" y1="310" x2="430" y2="360"/></g>
+<text x="70" y="70" font-family="Arial" font-size="26" font-weight="900" fill="#071a33">Single-cell genomics</text>
+<text x="70" y="395" font-family="Arial" font-size="21" font-weight="800" fill="#071a33">Cell clustering · cell type annotation · regulatory networks</text>
+</svg><div class="card-text"><h3>Single-cell genomics</h3><p>Gene expression analysis of scRNA-seq data, cluster analysis, cell type identification, and regulatory network analysis for immune and disease contexts.</p><div class="tags"><span class="tag">scRNA-seq</span><span class="tag">Regulatory Networks</span></div></div></article>
+<article class="card research-card"><svg class="research-figure" viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Metagenomics microbiome disease prediction illustration">
+<rect width="720" height="430" rx="28" fill="#f7fbff"/>
+<ellipse cx="165" cy="170" rx="34" ry="70" fill="#1f6feb" transform="rotate(-28 165 170)"/>
+<ellipse cx="250" cy="260" rx="26" ry="58" fill="#00a6b4" transform="rotate(34 250 260)"/>
+<ellipse cx="385" cy="155" rx="30" ry="72" fill="#ff9f1c" transform="rotate(18 385 155)"/>
+<ellipse cx="520" cy="250" rx="34" ry="68" fill="#1f6feb" transform="rotate(-42 520 250)"/>
+<circle cx="325" cy="300" r="38" fill="#00a6b4"/><circle cx="575" cy="135" r="30" fill="#ff9f1c"/>
+<rect x="90" y="345" width="540" height="26" rx="13" fill="#e5edf8"/><rect x="90" y="345" width="210" height="26" rx="13" fill="#1f6feb"/><rect x="306" y="345" width="165" height="26" rx="13" fill="#00a6b4"/><rect x="477" y="345" width="90" height="26" rx="13" fill="#ff9f1c"/>
+<text x="70" y="72" font-family="Arial" font-size="26" font-weight="900" fill="#071a33">Metagenomics</text>
+<text x="70" y="402" font-family="Arial" font-size="21" font-weight="800" fill="#071a33">Taxonomic profiling and microbiome-based disease prediction</text>
+</svg><div class="card-text"><h3>Metagenomics</h3><p>Computational methods for taxonomic classification, microbiome profiling, and disease prediction based on microbial community signatures.</p><div class="tags"><span class="tag">Microbiome</span><span class="tag">Disease Prediction</span></div></div></article>
 </div></section></main>
 
 <footer class="footer"><div class="container footer-grid"><div><strong>Systems Biology Lab</strong><br>Hankuk University of Foreign Studies</div><div>Division of Biomedical Engineering<br>Yongin, Republic of Korea</div><div>E-mail: <a href="mailto:yk38@hufs.ac.kr">yk38@hufs.ac.kr</a><br>Phone: +82-31-330-4467</div></div></footer>
