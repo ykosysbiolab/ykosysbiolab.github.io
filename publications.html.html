@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Publications | Systems Biology Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Systems Biology Lab at Hankuk University of Foreign Studies">
+<style>
+:root{
+  --navy:#071a33; --navy2:#0e2c55; --blue:#1f6feb; --cyan:#00a6b4;
+  --bg:#f5f8fc; --text:#182230; --muted:#667085; --line:#d8e2ef;
+  --card:#ffffff; --shadow:0 18px 44px rgba(7,26,51,.12); --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:0 auto}
+.topbar{background:#041224;color:#d9e8ff;font-size:.88rem;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);box-shadow:0 5px 18px rgba(16,24,40,.05)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:78px}
+.logo{display:flex;align-items:center;gap:14px;color:var(--navy);font-weight:900;letter-spacing:-.03em}
+.logo-mark{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-weight:900}
+.logo small{display:block;color:var(--muted);font-size:.76rem;margin-top:-3px;letter-spacing:0}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{padding:11px 12px;border-radius:999px;font-weight:800;font-size:.94rem;color:#344054}
+.menu a:hover,.menu a.active{background:#eaf2ff;color:var(--blue)}
+.hero{
+  min-height:690px; display:flex;align-items:center;
+  background:
+    linear-gradient(90deg,rgba(7,26,51,.94),rgba(7,26,51,.72),rgba(7,26,51,.25)),
+    url('assets/img/main-llm-risk.svg') center/cover no-repeat;
+  color:white;
+}
+.hero-content{max-width:740px;padding:82px 0}
+.kicker{display:inline-flex;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 13px;font-weight:900;color:#dbeafe}
+.hero h1{font-size:clamp(2.9rem,6vw,5.3rem);line-height:.98;letter-spacing:-.06em;margin:20px 0 22px}
+.hero p{font-size:1.16rem;color:#e8f1ff;margin:0 0 28px;max-width:720px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;padding:13px 18px;border-radius:999px;font-weight:900;border:1px solid transparent}
+.btn.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;box-shadow:0 14px 28px rgba(31,111,235,.26)}
+.btn.secondary{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);color:white}
+.section{padding:72px 0}.section.white{background:white}
+.section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:30px}
+.section-title h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;letter-spacing:-.045em;color:var(--navy);margin:0}
+.section-title p{max-width:650px;margin:0;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 28px rgba(16,24,40,.05)}
+.card h3{margin:0 0 10px;color:var(--navy);font-size:1.28rem}.card p{margin:0;color:#536174}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.icon{width:48px;height:48px;border-radius:15px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-weight:900;margin-bottom:14px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}.tag{background:#eef8ff;border:1px solid #cdeaff;color:#1165a8;border-radius:999px;padding:5px 10px;font-size:.83rem;font-weight:800}
+.page-hero{padding:70px 0 48px;background:linear-gradient(180deg,#fff,#edf5ff);border-bottom:1px solid var(--line)}
+.page-hero h1{font-size:clamp(2.5rem,5vw,4.4rem);line-height:1;letter-spacing:-.055em;color:var(--navy);margin:16px 0}
+.page-hero p{max-width:820px;color:var(--muted);font-size:1.08rem}
+.profile{display:grid;grid-template-columns:250px 1fr;gap:30px;align-items:start}
+.member-photo{width:100%;border-radius:24px;border:1px solid var(--line);box-shadow:var(--shadow);background:#eef5ff}
+.member-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 28px rgba(16,24,40,.05)}
+.member-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#eef5ff}
+.member-card .body{padding:18px}.member-card h3{margin:0;color:var(--navy)}.role{color:var(--blue);font-weight:900;margin:3px 0 8px}.muted{color:var(--muted)}
+.alumni-list{columns:2;column-gap:34px}.alumni-list li{break-inside:avoid;margin-bottom:7px}
+.pub-tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}.chip{background:white;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-weight:900;color:var(--blue)}
+.pub-list{display:block}.pub{background:transparent;border:0;border-radius:0;padding:0 0 12px 0;margin:0 0 12px 0;box-shadow:none}.pub-title{font-weight:400;color:var(--text)}.pub-meta{color:var(--muted);font-size:.95rem;margin-top:2px}.pub-year{color:var(--muted);font-size:.92rem;margin-top:2px}
+.course-list{display:grid;gap:14px}.course{background:white;border:1px solid var(--line);border-radius:18px;padding:18px 20px;font-weight:850;color:var(--navy)}
+.footer{background:var(--navy);color:#d9e8ff;padding:40px 0;margin-top:50px}.footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.note{font-size:.92rem;color:var(--muted);margin-top:12px}
+@media(max-width:920px){.hero{min-height:620px}.nav{flex-direction:column;align-items:flex-start;padding:14px 0}.menu{flex-wrap:wrap}.menu a{background:#f2f6fb}.about-grid,.grid-3,.grid-2,.profile{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.alumni-list{columns:1}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>Hankuk University of Foreign Studies · Division of Biomedical Engineering</span><span>Computational Biology · Biomedical Data Science</span></div></div>
+<header class="header"><div class="container nav"><a class="logo" href="index.html"><span class="logo-mark">SB</span><span>Systems Biology Lab<small>HUFS Biomedical Engineering</small></span></a><nav class="menu"><a class="" href="index.html">Home</a><a class="" href="research.html">Research</a><a class="active" href="publications.html">Publications</a><a class="" href="members.html">Members</a><a class="" href="teaching.html">Teaching</a><a class="" href="join.html">Join</a><a class="" href="contact.html">Contact</a></nav></div></header>
+
+<main><section class="section"><div class="container"><div class="pub-list"><article class="pub"><div class="pub-title">1. Timing-Dependent Effects of Dexamethasone in a Mouse Model of Neonatal Hypoxic–Ischemic Brain Injury: A Transcriptomic Analysis of Synaptic Signaling and Calcium Homeostasis</div><div class="pub-meta">J. Lim, J. Han, J. E. Shin, K. Jung, I. S. Kim, Y. Ko, K. Park. International Journal of Molecular Sciences, 27(11), 4920, 2026.</div><div class="pub-year">Year: 2026</div></article>
+<article class="pub"><div class="pub-title">2. Impaired insulin secretion via the Wnt5a/β-catenin pathway contributes to diabetes development in pancreatic cancer</div><div class="pub-meta">M. Lee, H. S. Park, H. S. Kim, A. R. Choi, J. H. Nam, B. J. Lim, J. S. Park, C. W. Ahn, et al. Experimental &amp; Molecular Medicine, 1–12, 2026.</div><div class="pub-year">Year: 2026</div></article>
+<article class="pub"><div class="pub-title">3. PGVDA: a pathway-aggregated genetic dosage framework for interpretable disease classification using machine learning</div><div class="pub-meta">S. Shon, Y. Ko, H. Yoon, K. Kwak, H. Lee. Briefings in Bioinformatics, 27(1), bbag025, 2026.</div><div class="pub-year">Year: 2026</div></article>
+<article class="pub"><div class="pub-title">4. 45 Distinct Pathogenic Type 17 T-cell Subsets and Regulatory T-cell Landscapes in Hidradenitis Suppurativa vs Psoriasis Uncovered by Single-Cell RNA Sequencing</div><div class="pub-meta">J. Lee, N. Park, D. Kim, J. Kim, W. Zhou, J. Cao, J. Krueger, Y. Ko, J. Kim. Journal of Investigative Dermatology, 145(11), e38, 2025.</div><div class="pub-year">Year: 2025</div></article>
+<article class="pub"><div class="pub-title">5. PRIVDIS: A Pathway-Based Risk-Informed Variant Dosage Integration Score Framework for Machine Learning-Based Discovery of Disease-Specific Molecular Pathways</div><div class="pub-meta">S. Shon, Y. Ko, H. Yoon, K. Kwak, H. Lee. Companion Proceedings of the 16th ACM International Conference, 2025.</div><div class="pub-year">Year: 2025</div></article>
+<article class="pub"><div class="pub-title">6. LLM-Enhanced Multimodal Framework for Drug–Drug Interaction Prediction</div><div class="pub-meta">S. Im, Y. Ko. Biomedicines, 13(10), 2355, 2025.</div><div class="pub-year">Year: 2025</div></article>
+<article class="pub"><div class="pub-title">7. A Unified Pathogenesis of Allergic Diseases; The Protein–Homeostasis–System Hypothesis</div><div class="pub-meta">Y. Ko, K. Y. Lee. International Journal of Molecular Sciences, 26(17), 8358, 2025.</div><div class="pub-year">Year: 2025</div></article>
+<article class="pub"><div class="pub-title">8. Multi-Modal Deep Learning Model for Drug–Drug Interaction Prediction Using Structural and LLM-Based Embeddings</div><div class="pub-meta">S. Im, Y. Ko. Annual Conference of KIPS, 711–712, 2025.</div><div class="pub-year">Year: 2025</div></article>
+<article class="pub"><div class="pub-title">9. Effect of Thymic Stromal Lymphopoietin (TSLP) on RNA-Seq-Based Transcriptomic Profiling of Human Podocytes: A Pathogenic Role in Proteinuria</div><div class="pub-meta">S. J. Park, Y. Ko, B. J. Lim, J. Oh, J. Shin. PEDIATRIC NEPHROLOGY, 39(1), S172–S173, 2024.</div><div class="pub-year">Year: 2024</div></article>
+<article class="pub"><div class="pub-title">10. D. Kim and Y.Ko. MIMR:Development of a Web-based system for miRNA and mRNA integrated analysis, IJMS 25(21), 2024.</div><div class="pub-year">Year: 2024</div></article>
+<article class="pub"><div class="pub-title">11. D. Kwon, J. Ahn, H. Kim, H. Kim, J. Kim, S. Wy, Y. Ko &amp; J. Kim, Convergent dwarfism consequences of minipigs under independent artificial selections, BMC genomics 25(1), 2024.</div><div class="pub-year">Year: 2024</div></article>
+<article class="pub"><div class="pub-title">12. J. Seo, H. Jung, and Y. Ko, PRID: Prediction model using RWR for interactions between drugs, Pharmaceutics, 15(10), Oct 2023.</div><div class="pub-year">Year: 2023</div></article>
+<article class="pub"><div class="pub-title">13. J. Kim, J. Lee, X. Li, N. Kunjravia, D. Rambhia, I. Cueto, K. Kim, V. Chaparata, Y. Ko, S. Garcet, W. Zhou, J. Cao and J. Krueger, Multi-omics segregate different transcriptomic impacts of anti-IL-17A blockade on Type 17 T-cells and regulatory immune cells in psoriasis skin, Front, Immunol., Vol 14, Sep. 2023.</div><div class="pub-year">Year: 2023</div></article>
+<article class="pub"><div class="pub-title">14. M. Shim, J. Lee, D. Kwon, D. Lee, N. Park, Y. Ko and J. Kim Reference-based read clustering improves the de novo genome assembly of microbial strains, Computational and Structural Biotechnology Journal, 2022 Dec;21:444-451.</div><div class="pub-year">Year: 2022</div></article>
+<article class="pub"><div class="pub-title">15. S. Yoon, Y. Ko, G. Jeong, K. Lee, J. Lee, M. Solmi, L. Jacob, L. Smith, A. Stickley, A. Carvalho, E. Dragioti, A. Kronbichler, A. Koyanagi, S. Hong, T. Thompson, H. Oh, G. Pabo, J. Radua, J. Shin Differential Expression of MicroRNAs in Alzheimer&#x27;s Disease: A Systematic Review and Meta-analysis, Molecular Psychiatry, 2022 Apr;27:2405-2413.</div><div class="pub-year">Year: 2022</div></article>
+<article class="pub"><div class="pub-title">16. E. Choi, Y.Ko and M Williams Transcriptional analysis of sweet corn hybrids in response to crowding stress, PLoS ONE, 2021. Jun 16(6).</div><div class="pub-year">Year: 2021</div></article>
+<article class="pub"><div class="pub-title">17. Y. Ko, J. Lee, C. Lee, N. Jeon, K. Lee, J. Oh, A. Kronbichler, M. Saleem, B. Lim, and J. Shin The effect of interleukin-4 and dexamethasone on RNA-Seq-based transcriptomic profiling of human podocytes: A potential role in minimal change nephrotic syndrome, J Clin Med 2021 Feb;10(3):496.</div><div class="pub-year">Year: 2021</div></article>
+<article class="pub"><div class="pub-title">18. J. Oh, J. Shin, C. Lee, H.Lee, Y. Ko and J. Lee Clinical application of a phenotype-based NGS panel for differential diagnosis of inherited kidney disease and the beyond, Clinical Genetics, 2021 Feb;99(2):236-249.</div><div class="pub-year">Year: 2021</div></article>
+<article class="pub"><div class="pub-title">19. J. Lee, M. Son, C. Son, K. Lee, Y. Ko, J. Radua, M. Eisenhut, F. Gressier, A. Koyanagi, B. Stubbs, M. Solmi, T. Rais, K. Lee, A. Kronbichler, E. Dragioti, D. Vasconcelos, F. Silva, K. Tizaoui, G. Jeong, J. Kim, A. Brunoni, A. Carvalho, J. Shin, P. Fusar-Poli Genetic variation and autism: A field synopsis and systematic meta-analysis, Brain Science, 10(10):692, 2020.</div><div class="pub-year">Year: 2020</div></article>
+<article class="pub"><div class="pub-title">20. Y. Ko Computational drug repositioning: Current progress and challenges, Applied Sciences, 10(15):5076, 2020.</div><div class="pub-year">Year: 2020</div></article>
+<article class="pub"><div class="pub-title">21. S. Name, K. Lee, Y. Ko, M. Eisenhut, K. Lee, J. Shin, A. Kronbichler Understanding the genetics in systematic lupus erythematosus using Bayesian statistics and gene network analysis, Clincial Exp. Pediatric, Published Online, July 15, 2020.</div><div class="pub-year">Year: 2020</div></article>
+<article class="pub"><div class="pub-title">22. J. Jeong, M. Kim, J. Lee, H. Lee, Y. Ko, H. Kim, S. Fang ID1-mediated BMP signaling pathway potentiates Glucagon-like peptide-1 secretion in response to nutrient replenishment, International Journal of Molecular Sciences, 21(11):3824, 2020.</div><div class="pub-year">Year: 2020</div></article>
+<article class="pub"><div class="pub-title">23. M. Kim, K. Jung, Y. Ko, I. Kim, K. Hwang, J. Jang, J. Shin, and K. Park TNF-α pretreatment improves the survival and function of transplanted human neural progenitor cells following hypoxic-ischemic brain injury, Cells, 9(5):1195, 2020.</div><div class="pub-year">Year: 2020</div></article>
+<article class="pub"><div class="pub-title">24. J. Park, K. Lee, B. Jeon, H. Ochs, J. Lee, H. Gee, S. Seo, D, Geum, C. Piccirillo, M. Eisenhut, H. Vliet, J. Lee, A. Kronbichler, Y. Ko, J. Shin Immune dysregulation, polyendocrinopathy, enteropathy, X-linked (IPEX) syndrome: a systematic review. Autoimmun Rev. Vol 19, Issue 6, 2020.</div><div class="pub-year">Year: 2020</div></article>
+<article class="pub"><div class="pub-title">25. Y. Ko, C. Lee, Y. Lee and J. Lee Systematic Approach for Drug Repositioning of Anti-epileptic Drugs., Diagnostics, 9(4), 208, 2019.</div><div class="pub-year">Year: 2019</div></article>
+<article class="pub"><div class="pub-title">26. S. Baek, S. Oh, D. Kim, K. Kim. K. Boo, Y. Ko, D. Park and S. Fang RORα Is Crucial for Attenuated Inflammatory Response to Maintain Intestinal Homeostasis.PNAS, 2019.</div><div class="pub-year">Year: 2019</div></article>
+<article class="pub"><div class="pub-title">27. S. Jang, S. Fang, K. Kim, Y. Ko, H. Kim. J. Oh, G. Hong, S. Lee, J. Kim, I. Noh and D. Lee Combination treatment with n-3 polyunsaturated fatty acids and ursodeoxycholic acid dissolves cholesterol gallstones in mice. Scientific Reports 9, Article number:12740, 2019.</div><div class="pub-year">Year: 2019</div></article>
+<article class="pub"><div class="pub-title">28. K. Lee, A. Kronbichler, D. Vasconcelos, F. Silva, Y. Ko, Y. Oh, M. Eisenhut, J. Shin Genetic Variants in Antineutrophil Cytoplasmic Antibody-Associated Vasculitis: A Bayesian Approach and Systematic Review, Journal of Clinical Medicine, 2019.</div><div class="pub-year">Year: 2019</div></article>
+<article class="pub"><div class="pub-title">29. Y. Ko, J. Kim, and S. Zas Markov chain Monte Carlo simulation of a bayesian mixture model for gene network inference., Genes &amp; Genomics, 2019.</div><div class="pub-year">Year: 2019</div></article>
+<article class="pub"><div class="pub-title">30. J. Lee, D. Lee, M. Sim, D. Kwon, J. Kim, Y. Ko, and J. Kim mySyntenyPortal: an application package to construct websites for synteny block analysis.,BMC Bioinformatics,19:216, 2018.</div><div class="pub-year">Year: 2018</div></article>
+<article class="pub"><div class="pub-title">31. M. Kim, K. Jung, I. Kim, I. Lee, Y. Ko, J. Shin and K. Park TNF-α induces human neural progenitor cell survival after oxygen-glucose deprivation via NF-κB pathway. Experimental &amp; Molecular Medicine, 50:14, 2018.</div><div class="pub-year">Year: 2018</div></article>
+<article class="pub"><div class="pub-title">32. Y. Cho, C. Lee, E. Jeong, M. Kim, J. Hong, Y. Ko, B. Lee, G. Yun, B. Kim, J. Jung, J. Jung and J. Lee Prevalence of Rare Genetic Variations and Their Implications in NGS-data Interpretation. Scientific Reports 7, Article number:9801, 2017.</div><div class="pub-year">Year: 2017</div></article>
+<article class="pub"><div class="pub-title">33. Y. Ko, C.Lee, H.Lee, M.Lee and J. Lee Clinical application of next-generation sequencing for the diagnosis of segmental neurofibromatosis. Journal of Dermatological Science, 2017.</div><div class="pub-year">Year: 2017</div></article>
+<article class="pub"><div class="pub-title">34. Y. Ko, M. Cho, J.Lee, and J. Kim Identification of disease comorbidity through hidden molecular mechanisms. Scientific Reports 6, Article number:39433, 2016.</div><div class="pub-year">Year: 2016</div></article>
+<article class="pub"><div class="pub-title">35. D. Lee, M. Cho, W. Hong, D. Lim, H. Kim, Y. Cho, J. Jeong, B. Choi, Y. Ko, and J. Kim Evolutionary analyses of Hanwoo (Korean cattle)-specific single-nucleotide polymorphisms and genes using whole-genome resequencing data of a Hanwoo population., Mol. Cells 2016; 39(9): 692~698, 2016.</div><div class="pub-year">Year: 2016</div></article>
+<article class="pub"><div class="pub-title">36. J. Lee, W. Hong, M. Cho, M. Sim, D. Lee, Y. Ko, and J. Kim Synteny Portal: a web-based application portal for synteny block analysis. Nucleic Acids Research, doi: 10.1093/nar/gkw310, First published online: May 6, 2016.</div><div class="pub-year">Year: 2016</div></article>
+<article class="pub"><div class="pub-title">37. Y. Ko, C. Lee, M. Moon, G. Hong, C. Cheon, and J. Lee Unravelling the mechanism of action of enzyme replacement therapy in Fabry disease. Journal of Human Genetics, 61:143-149, 2016.</div><div class="pub-year">Year: 2016</div></article>
+<article class="pub"><div class="pub-title">38. H. Han, H. Shim, D. Shin, J. Shim, Y. Ko, J. Shin, H. Kim, A. Cho, E. Kim, T. Lee, H. Kim, S. Yang, D. Bae, A Yun, S. Kim, C. Kim, H. Cho, B. Kang, S. Shin, and I. Lee TRRUST: a reference database of human transcriptional regulatory interactions. Scientific Reports, 12:11432, 2015.</div><div class="pub-year">Year: 2015</div></article>
+<article class="pub"><div class="pub-title">39. S. L. Rodriguez-Zas, Y. Ko, H. A. Enzenauer, and B. R. Southey. Advancing the understanding of the embryo transcriptome co-regulation using meta-, functional, and gene network analysis tools, Systems Biology in Reproductive Medicine, 54(4-5):198-213, 2008.</div><div class="pub-year">Year: 2008</div></article>
+<article class="pub"><div class="pub-title">40. S. Kim, J. Kim, Y. Ko, and J. Han. PerRank: Personalized Rank Retrieval with Categorical and Numerical Attributes, Proceedings of the IEEE International Conference on Data Engineering Workshops, 2008.</div><div class="pub-year">Year: 2008</div></article>
+<article class="pub"><div class="pub-title">41. Y. Ko, C. Zhai, and S. L. Rodriguez-Zas. Inference of Gene Pathways Using Gaussian Mixture Models, IEEE International Conference on Bioinformatics and Biomedicine Workshops, 2007.</div><div class="pub-year">Year: 2007</div></article></div></div></section></main>
+
+<footer class="footer"><div class="container footer-grid"><div><strong>Systems Biology Lab</strong><br>Hankuk University of Foreign Studies</div><div>Division of Biomedical Engineering<br>Yongin, Republic of Korea</div><div>E-mail: <a href="mailto:younko@hufs.ac.kr">younko@hufs.ac.kr</a><br>Phone: +82-31-330-4467</div></div></footer>
+</body></html>
